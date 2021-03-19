@@ -3,8 +3,8 @@ all:
 	rm ./*.riscv
 	cp ../*.riscv ./
 	echo $(BINFILE)
+	$(foreach riscvbin, $(BINFILE), $(shell cp riscvbin ./))
 	git add *
 	git commit -m "update"
 	git push
 
-# $(foreach riscvbin $(BINFILE) cp riscvbin ./)
